@@ -4,6 +4,10 @@ import EstudoDeMetodosAplicacao.Funções.Operacoes;
 import EstudoDeMetodosAplicacao.Valores.Valor;
 
 import javax.naming.ldap.Control;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Scanner;
 
 public class MenuOp {
@@ -12,6 +16,9 @@ public class MenuOp {
     Operacoes operacoes = new Operacoes();
     Valor valorX = new Valor();
     Valor valorY = new Valor();
+    Date dataHoraAtual = new Date();
+    String data = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
+    String hora = new SimpleDateFormat("HH:mm:ss").format(dataHoraAtual);
 
     public MenuOp() {
         this.control = true;
@@ -28,14 +35,21 @@ public class MenuOp {
                 break;
             }
             // Apresentacao Menu
+
+            LocalDateTime agora = LocalDateTime.now();
+            LocalDateTime tarde = LocalDateTime.parse("2000-12-01T12:00:01");
+            LocalDateTime noite = LocalDateTime.parse("2000-12-01T18:00:01");
+            if (agora.isAfter(tarde) && agora.isBefore(noite)) System.out.println("Boa tarde"); // Teste do Horario
+            else if (agora.isAfter(noite)) System.out.println("Boa noite"); // Teste do Horario
+
+            //System.out.println("Bom dia");
             System.out.println("Por favor, selecione uma opcao.");
             System.out.println("(1) Para soma,");
             System.out.println("(2) Para subtracao");
             System.out.println("(3) Para divisao,");
             System.out.println("(4) Para multiplicacao.");
-          
-            //Fim do menu
 
+            //Fim do menu
 
             int op = sc.nextInt();
             switch (op) {
