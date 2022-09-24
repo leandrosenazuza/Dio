@@ -8,8 +8,8 @@ public class aplicacaoSobrecarga {
 
 
     public static void main(String[] args) {
-        List<formaGeometrica> lista = new ArrayList<formaGeometrica>();
-
-
+        //List<formaGeometrica> lista = new ArrayList<formaGeometrica>();
+        menuArea menu = new menuArea();
+        menu.rotina();
     }
 }

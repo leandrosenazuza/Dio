@@ -8,10 +8,15 @@ public class formaGeometrica {
     int tipoForma;
 
 
-    public long calculoDaArea(long base) return baseMenor*2;
-    public long calculoDaArea(long baseMenor, long baseMaior)  return baseMenor*baseMaior;
-    public long calculoDaArea(long baseMenor, long baseMaior, long altura) return ((baseMenor+baseMaior)*altura)/2;
-
+    public long calculoDaArea(long base){
+        return baseMenor*2;
+    }
+    public long calculoDaArea(long baseMenor, long baseMaior) {
+        return baseMenor * baseMaior;
+    }
+    public long calculoDaArea(long baseMenor, long baseMaior, long altura) {
+        return ((baseMenor + baseMaior) * altura) / 2;
+    }
 
     public int getTipoDeForma() {
         return tipoDeForma;
